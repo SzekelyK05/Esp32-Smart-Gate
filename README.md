@@ -2,12 +2,18 @@
 Parking lot gate simulation using Esp32
 
 ## Bill of Materials
-The project needs an esp32 (ESP32-C3 seeed studio), 2 HC-SR04 ultrasonic sensors, SG90 Micro Servo, 16x2 LCD display with I2C interface, breadboard and jumper wires.
+The project needs an esp32 (ESP32-C3 seeed studio), 2 HC-SR04 (or RCWL-9610A design) ultrasonic sensors, SG90 Micro Servo, 16x2 LCD display with I2C interface, breadboard and jumper wires.
+
 Other Esp32 variants are compatible too, but the pins may be different.
+
+*Important: If you are using standard HC-SR04 ultrasonic sensors(that input 5V), a voltage divider is needed (1k ohm resistor and 2k ohm resistor)!
+
 No soldering needed.
 
 
 ## Wiring
+
+*For standard HC-SR04 ultrasonic sensors connect a 1k ohm resistor in series from Echo to Esp32 pin and a 2k ohm resistor from the Esp32 pin to Gnd.
 
 Ultrasonic sensor In:   Vcc -> VIN/VBUS
                         Trig -> Pin 3
@@ -27,6 +33,7 @@ Lcd Display:            Gnd -> Gnd
 Micro Servo:            Brown wire -> Gnd
                         Red wire -> VIN/VBUS
                         Yellow wire -> Pin 2
+
 
 ## Dependencies
 LiquidCrystal_I2C.h
